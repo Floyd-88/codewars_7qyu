@@ -25,7 +25,7 @@ console.log(squareDigits(2456))*/
 
 
 /*You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return
- the middle character. If the word's length is even, return the middle 2 characters.*/
+the middle character. If the word's length is even, return the middle 2 characters.*/
 
 /* function getMiddle(s)
 {
@@ -145,15 +145,15 @@ console.log(movie(500, 15, 0.90))*/
   obj[arr[i]] = arr[i]; 
  }
  return Object.keys(obj).map((key)=> (obj[key])).join(" ")
-}*/
-//console.log(removeConsecutiveDuplicates("alpha beta ddd beta gamma gamma gamma ddd delta alpha beta beta gamma gamma gamma delta"))
-
+}
+console.log(removeConsecutiveDuplicates("alpha beta ddd beta gamma gamma gamma ddd delta alpha beta beta gamma gamma gamma delta"))
+*/
 
 
 
 /*Вам дадут слово. Ваша задача будет заключаться в том, чтобы убедиться, что каждый символ в этом слове имеет одинаковое количество вхождений. Вы вернетесь true, если это действительно, или falseесли это не так.*/
 
-function validateWord(s){
+/*function validateWord(s){
 let obj ={};
 let sum = 0;
 s.toLowerCase().split("").forEach(function(x) { obj[x] = (obj[x] || 0)+1; });
@@ -163,4 +163,188 @@ for(key in obj) {
 return (sum % Object.keys(obj).length == 0) ? true : false;
 }
 
-console.log(validateWord("Dgfgjfjd"))
+console.log(validateWord("Dgfgjfjd"))*/
+
+
+
+/*Given a non-negative integer, return an array / a list of the individual digits in order.
+Examples:
+123 => [1,2,3]*/
+
+/*function digitize(n) {
+return String(n).split("").map(i => +i);
+}
+
+console.log(digitize(123))*/
+
+
+
+/*множьте все цифры неотрицательного целого числа nдруг на друга, повторяя с произведением, пока не получится одна цифра. 
+Требуемое количество шагов называется мультипликативной устойчивостью .*/
+
+/*function per(n) {
+  let result = [n];
+  while(result[result.length-1] > 9) {
+    let sum = result[result.length-1].toString().split("").reduce((a, i) => a*i)
+    result.push(sum)
+  }
+  return result.splice(1)
+}
+console.log(per(277777788888899))*/
+
+
+ /*Дан массив с числами. Найдите сумму этих чисел. Показать решение.*/
+
+/*let arr = [1, 2, 3, 0, 4, 5, 6];
+
+let result = arr.reduce( (accum, item)=> {
+    accum += item;
+    return accum;
+})
+console.log(result)*/
+
+ /*Дан массив с числами. Найдите сумму первых N элементов до первого нуля. Пример: [1, 2, 3, 0, 4, 5, 6] - суммируем первые 3 
+ элемента, так как дальше стоит элемент с числом 0. Показать решение.*/
+/*var arr = [1, 2, 3, 0, 4, 5, 6];
+var answer = 0;
+
+var result = arr.reduce(function(sum, elem) {
+  console.log(sum)
+  console.log(elem)
+  if (elem == 0) {
+    answer = sum;
+  } else {
+    return sum + elem;
+  }
+});
+
+if(answer == undefined){answer = result};
+console.log(answer)*/
+
+
+
+
+/* Дан массив с числами. Найдите сумму последних N элементов до первого нуля с конца. Пример: [1, 2, 3, 0, 4, 5, 6] - суммируем
+ последние 3 элемента, так как дальше стоит элемент с числом 0. Показать решение.*/
+/*var arr = [2, 0, 1];
+var answer = 0;
+
+var result = arr.reduceRight(function(sum, elem) {
+  if (elem == 0) {
+    answer = sum;
+  } else {
+    return sum + elem;
+  }
+});
+
+console.log(answer)*/
+
+
+/* Дан массив с числами. Узнайте сколько элементов с начала массива надо сложить, чтобы в сумме получилось больше 10-ти. 
+Показать решение.*/
+// let num = 0;
+// let arr = [1, 2, 8, 0, 9, 37, 6];
+// function func(arr){
+// let col = 1;
+// if(num === 0 ){
+// arr.reduceRight(function(sum, elem) {
+//  if(sum > 10) {
+//   num = col;
+//   alert(num)
+//  } else{
+//   col++;
+//   return sum + elem; }
+//   });
+// }else {console.log(num)}
+// }
+// func(arr)
+// console.log(num)
+
+
+
+/*Дополнение до единиц двоичного числа — это число, полученное путем замены всех нулей на 1 и всех 1 на 0. Например:*/
+
+
+/*function onesComplement(n) {
+  return [...n].map(i => (i != 1) ? 1 : 0).join("")
+};
+
+console.log(onesComplement("10101"))*/
+
+
+
+/*Вам будет предоставлен массив объектов, представляющих данные о разработчиках, которые подписались на участие в следующей 
+встрече программистов, которую вы организуете. Ваша задача — вернуть объект, который включает в себя количество вариантов еды,
+ выбранных разработчиками в форме регистрации на встречу. .*/
+
+/* function orderFood(list) {
+return list.reduce( (x, i) =>  ({...x, [i.meal]: (x[i.meal] || 0) + 1}), {})
+}
+
+var list1 = [
+  { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'C', 
+    meal: 'vegetarian' },
+  { firstName: 'Anna', lastName: 'R.', country: 'Liechtenstein', continent: 'Europe', age: 52, language: 'JavaScript', 
+    meal: 'standard' },
+  { firstName: 'Ramona', lastName: 'R.', country: 'Paraguay', continent: 'Americas', age: 29, language: 'Ruby', 
+    meal: 'vegan' },
+  { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C', 
+    meal: 'vegetarian' },
+];
+
+console.log(orderFood(list1));*/
+
+
+
+
+/*Вам будет предоставлен массив объектов, представляющих данные о разработчиках, которые подписались на участие в следующей 
+встрече программистов, которую вы организуете. напишите функцию, которая при выполнении findAdmin(list1, 'JavaScript')возвращает 
+только тех разработчиков JavaScript, которые являются администраторами GitHub:*/
+
+/*var list1 = [
+  { firstName: 'Harry', lastName: 'K.', country: 'Brazil', continent: 'Americas', age: 22, language: 'JavaScript', githubAdmin: 'yes' },
+  { firstName: 'Kseniya', lastName: 'T.', country: 'Belarus', continent: 'Europe', age: 49, language: 'Ruby', githubAdmin: 'no' },
+  { firstName: 'Jing', lastName: 'X.', country: 'China', continent: 'Asia', age: 34, language: 'JavaScript', githubAdmin: 'yes' },
+  { firstName: 'Piotr', lastName: 'B.', country: 'Poland', continent: 'Europe', age: 128, language: 'JavaScript', githubAdmin: 'no' }
+];
+
+function findAdmin(list, lang) {
+  return list.filter(i => i["language"] === lang && i["githubAdmin"] === "yes")
+}
+console.log(findAdmin(list1, 'JavaScript'))*/
+
+
+
+
+/*Вам будет предоставлен массив объектов (хэшей в ruby), представляющих данные о разработчиках, которые подписались на участие в 
+встрече программистов, которую вы организуете впервые. Ваша задача — вернуть количество разработчиков JavaScript из Европы .*/
+
+/*var list1 = [
+  { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'JavaScript' },
+  { firstName: 'Maia', lastName: 'S.', country: 'Tahiti', continent: 'Oceania', age: 28, language: 'JavaScript' },
+  { firstName: 'Shufen', lastName: 'L.', country: 'Taiwan', continent: 'Asia', age: 35, language: 'HTML' },
+  { firstName: 'Sumayah', lastName: 'M.', country: 'Tajikistan', continent: 'Asia', age: 30, language: 'CSS' }
+];
+
+function countDevelopers(list) {
+return list.filter(i => i["continent"] === "Europe" && i["language"] ==="JavaScript").length
+}
+console.log(countDevelopers(list1))*/
+
+
+/*Ваша задача — вернуть массив, в котором каждый объект будет иметь новое свойство «приветствие» со следующим строковым 
+значением:
+Привет, <имя здесь>, что тебе больше всего нравится в <языке здесь>?*/
+
+var list1 = [
+  { firstName: 'Sofia', lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java' },
+  { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: 'Python' },
+  { firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby' } 
+];
+
+function greetDevelopers(list) {
+return list.map(p => p.firstName === false ? p : 
+  {...p, greeting: `Hi ${p["firstName"]}, what do you like the most about ${p["language"]}?` })
+}
+
+console.log(greetDevelopers(list1))
