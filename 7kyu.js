@@ -336,7 +336,7 @@ console.log(countDevelopers(list1))*/
 значением:
 Привет, <имя здесь>, что тебе больше всего нравится в <языке здесь>?*/
 
-var list1 = [
+/*var list1 = [
   { firstName: 'Sofia', lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java' },
   { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: 'Python' },
   { firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby' } 
@@ -347,4 +347,90 @@ return list.map(p => p.firstName === false ? p :
   {...p, greeting: `Hi ${p["firstName"]}, what do you like the most about ${p["language"]}?` })
 }
 
-console.log(greetDevelopers(list1))
+console.log(greetDevelopers(list1))*/
+
+
+
+/*Ваша задача вернуть:
+true если хотя бы один разработчик Ruby зарегистрировался; или false если не будет разработчиков Ruby.*/
+
+/*var list1 = [
+  { firstName: 'Emma', lastName: 'Z.', country: 'Netherlands', continent: 'Europe', age: 29, language: 'Ruby' },
+  { firstName: 'Piotr', lastName: 'B.', country: 'Poland', continent: 'Europe', age: 128, language: 'Javascript' },
+  { firstName: 'Jayden', lastName: 'P.', country: 'Jamaica', continent: 'Americas', age: 42, language: 'JavaScript' }
+];
+
+function isRubyComing(list) {
+return list.some(i => i.language === "Ruby")
+}
+console.log(isRubyComing(list1))*/
+
+
+
+/*Ваша задача — вернуть одну из следующих строк:
+< firstName here >, < country here > первого зарегистрировавшегося разработчика Python; или
+There will be no Python developersесли ни один разработчик Python не подписался.*/
+
+/*var list1 = [
+ {"firstName":"Mark","lastName":"G.","country":"Scotland","continent":"Europe","age":22,"language":"JavaScript"},
+ {"firstName":"Victoria","lastName":"T.","country":"Puerto Rico","continent":"Americas","age":30,"language":"Python"},
+ {"firstName":"Emma","lastName":"B.","country":"Norway","continent":"Europe","age":19,"language":"Clojure"}
+];
+
+
+function getFirstPython(list) {
+let str = "There will be no Python developers"
+let result = list.filter(i => i.language === "Python")
+return (result.length != 0) ? result[0].firstName + ", " + result[0].country : str
+}
+
+console.log(getFirstPython(list1));*/
+
+
+/*Your task is to return an object (associative array in PHP, table in COBOL) which includes the count of each coding language 
+represented at the meetup.*/
+
+/*var list1 = [
+  { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'C' },
+  { firstName: 'Anna', lastName: 'R.', country: 'Liechtenstein', continent: 'Europe', age: 52, language: 'JavaScript' },
+  { firstName: 'Ramon', lastName: 'R.', country: 'Paraguay', continent: 'Americas', age: 29, language: 'Ruby' },
+  { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C' },
+];
+
+function countLanguages(list) {
+ return list.reduce( (a, i) => 
+  ({...a, [i.language]: (a[i.language] || 0) + 1}), {})
+}
+
+console.log(countLanguages(list1));*/
+
+
+/*Your task is to return either:
+true if all developers in the list code in the same language; or
+false otherwise.*/
+/*var list1 = [
+  { firstName: 'Daniel', lastName: 'J.', country: 'Aruba', continent: 'Americas', age: 42, language: 'JavaScript' },
+  { firstName: 'Kseniya', lastName: 'T.', country: 'Belarus', continent: 'Europe', age: 22, language: 'JavaScript' },
+  { firstName: 'Hanna', lastName: 'L.', country: 'Hungary', continent: 'Europe', age: 65, language: 'JavaScript' },
+];
+
+function isSameLanguage(list) {
+ return list.every(i => i.language === list[0].language)
+}
+
+console.log(isSameLanguage(list1))*/
+
+
+/*Your task is to return a sequence which includes the developer who is the oldest. In case of a tie, include all same-age 
+senior developers listed in the same order as they appeared in the original input array.*/
+/*var list1 = [
+  { firstName: 'Gabriel', lastName: 'X.', country: 'Monaco', continent: 'Europe', age: 49, language: 'PHP' },
+  { firstName: 'Odval', lastName: 'F.', country: 'Mongolia', continent: 'Asia', age: 56, language: 'Python' },
+  { firstName: 'Emilija', lastName: 'S.', country: 'Lithuania', continent: 'Europe', age: 19, language: 'Python' },
+  { firstName: 'Sou', lastName: 'B.', country: 'Japan', continent: 'Asia', age: 49, language: 'PHP' },
+];
+
+function findSenior(list) {
+return list.filter( (a) => a.age === Math.max(...list.map(i => i.age)) )
+}
+console.log(findSenior(list1))*/
