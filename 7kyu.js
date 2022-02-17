@@ -434,3 +434,67 @@ function findSenior(list) {
 return list.filter( (a) => a.age === Math.max(...list.map(i => i.age)) )
 }
 console.log(findSenior(list1))*/
+
+/*Your task is to return:
+true if all of the following continents / geographic zones will be represented by at least one developer: 
+'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'.
+false otherwise.*/
+
+/*var list1 = [
+{"firstName":"Alexander","lastName":"F.","country":"Russia","continent":"Europe","age":89,"language":"Java"},
+{"firstName":"Fatima","lastName":"K.","country":"Saudi Arabia","continent":"Asia","age":21,"language":"Clojure"},
+{"firstName":"Mark","lastName":"G.","country":"Scotland","continent":"Europe","age":22,"language":"JavaScript"},
+{"firstName":"Nikola","lastName":"H.","country":"Serbia","continent":"Europe","age":29,"language":"Python"},
+{"firstName":"Jakub","lastName":"I.","country":"Slovakia","continent":"Asia","age":28,"language":"Java"},
+{"firstName":"Kseniya","lastName":"T.","country":"Belarus","continent":"Americas","age":89,"language":"JavaScript"},
+{"firstName":"Luka","lastName":"J.","country":"Slovenia","continent":"Oceania","age":29,"language":"Clojure"},
+{"firstName":"Mariam","lastName":"B.","country":"Egypt","continent":"Africa","age":89,"language":"Python"}]
+
+
+function allContinents(list) {
+let arr = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
+let result = [...new Set(list.map( i => i.continent))];
+return arr.length === result.length && arr.sort().every(function(value, index) { return value === result.sort()[index]})
+}
+console.log(allContinents(list1))*/
+
+
+
+/*Your task is to return:
+true if developers from all of the following age groups have signed up: teens, twenties, thirties, forties, fifties, sixties, 
+seventies, eighties, nineties, centenarian (at least 100 years young).
+false otherwise.*/
+
+/*var list1 = [
+  { firstName: 'Andrei', lastName: 'E.', country: 'Romania', continent: 'Europe', age: 59, language: 'C' },
+  { firstName: 'Maria', lastName: 'S.', country: 'Peru', continent: 'Americas', age: 60, language: 'C' },
+  { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 75, language: 'Python' },
+  { firstName: 'Chloe', lastName: 'K.', country: 'Guernsey', continent: 'Europe', age: 88, language: 'Ruby' },
+  { firstName: 'Viktoria', lastName: 'W.', country: 'Bulgaria', continent: 'Europe', age: 98, language: 'PHP' },
+    { firstName: 'Viktoria', lastName: 'W.', country: 'Bulgaria', continent: 'Europe', age: 199, language: 'PHP' },
+  { firstName: 'Harry', lastName: 'K.', country: 'Brazil', continent: 'Americas', age: 10, language: 'Python' },
+  { firstName: 'Kseniya', lastName: 'T.', country: 'Belarus', continent: 'Europe', age: 29, language: 'JavaScript' },
+  { firstName: 'Jing', lastName: 'X.', country: 'China', continent: 'Asia', age: 39, language: 'Ruby' },
+  { firstName: 'Noa', lastName: 'A.', country: 'Israel', continent: 'Asia', age: 40, language: 'Ruby' },
+  { firstName: 'Andrei', lastName: 'E.', country: 'Romania', continent: 'Europe', age: 59, language: 'C' },
+  { firstName: 'Maria', lastName: 'S.', country: 'Peru', continent: 'Americas', age: 60, language: 'C' },
+  { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 75, language: 'Python' },
+  { firstName: 'Chloe', lastName: 'K.', country: 'Guernsey', continent: 'Europe', age: 88, language: 'Ruby' },
+  { firstName: 'Viktoria', lastName: 'W.', country: 'Bulgaria', continent: 'Europe', age: 98, language: 'PHP' },
+    { firstName: 'Viktoria', lastName: 'W.', country: 'Bulgaria', continent: 'Europe', age: 199, language: 'PHP' },
+
+];
+
+function isAgeDiverse(list) {
+  let result = list.map(i => i.age).sort((a,b) => a -b)
+  let last_el = result.pop();
+  let first_el = result.shift();
+  let arr =[];
+ let age_arr =  [30, 40, 50, 60, 70, 80, 90, 100].every( (x, i, arr) => result.some(y => y < x && y >= arr[i] - 10) )
+  arr.push(age_arr);
+(last_el >= 100 && last_el <= 199) ? arr.push(true) : arr.push(false);
+(first_el >= 0 && first_el <= 19) ? arr.push(true) : arr.push(false);
+return arr.every(i => i === true)
+}
+
+console.log(isAgeDiverse(list1))*/
