@@ -498,3 +498,81 @@ return arr.every(i => i === true)
 }
 
 console.log(isAgeDiverse(list1))*/
+
+
+
+/*The input array will always be valid and formatted as in the example above.
+Age is represented by a number which can be any positive integer.
+Lastname will always be one upper-cased letter followed by dot, e.g. 'N.'
+Order of the objects in the array should be maintained but order of the properties in the individual objects does not matter.*/
+
+/*var list1 = [
+  { firstName: 'Emily', lastName: 'N.', country: 'Ireland', continent: 'Europe', age: 30, language: 'Ruby' },
+  { firstName: 'Nor', lastName: 'E.', country: 'Malaysia', continent: 'Asia', age: 20, language: 'Clojure' }
+];
+
+function addUsername(list) {
+let year_now = new Date().getFullYear();
+list.map(i => i.username = i.firstName.toLowerCase() + i.lastName[0].toLowerCase() + String(year_now - i.age))
+return list
+}
+
+console.log(addUsername(list1));*/
+
+
+/*write a function that returns the average age of developers (rounded to the nearest integer). In the example above your 
+function should return 50 (number).*/
+/*var list1 = [{"firstName":"Kseniya","lastName":"T.","country":"Belarus","continent":"Europe","age":29,"language":"Ruby"},
+{"firstName":"Amar","lastName":"V.","country":"Bosnia and Herzegovina","continent":"Europe","age":32,"language":"Ruby"}];
+
+function getAverageAge(list) {
+  let result = (list.length === 1) ? list[0].age : list.reduce((accum, item) => (accum + item.age),0 )
+  return Math.round(result / list.length)
+ }
+
+console.log(getAverageAge(list1))*/
+
+
+/*Your task is to return either:
+true if the number of meetup participants representing any of the three programming languages is ** at most 2 times higher than 
+the number of developers representing any of the remaining programming languages**; or false otherwise.*/
+
+/*var list1 = [{"firstName":"George","lastName":"B.","country":"England","continent":"Europe","age":21,"language":"JavaScript"},{"firstName":"Jakub","lastName":"I.","country":"Slovakia","continent":"Europe","age":28,"language":"JavaScript"},{"firstName":"Marian","lastName":"N.","country":"Colombia","continent":"Americas","age":55,"language":"JavaScript"},{"firstName":"Krishna","lastName":"G.","country":"Nepal","continent":"Asia","age":22,"language":"Python"},{"firstName":"Joao","lastName":"D.","country":"Portugal","continent":"Europe","age":35,"language":"JavaScript"},{"firstName":"Mia","lastName":"H.","country":"Germany","continent":"Europe","age":39,"language":"Ruby"},{"firstName":"Andrei","lastName":"E.","country":"Romania","continent":"Europe","age":19,"language":"Ruby"},{"firstName":"Noa","lastName":"A.","country":"Israel","continent":"Asia","age":40,"language":"Ruby"},{"firstName":"Sofia","lastName":"A.","country":"Denmark","continent":"Europe","age":19,"language":"JavaScript"},{"firstName":"Noah","lastName":"M.","country":"Switzerland","continent":"Europe","age":19,"language":"JavaScript"},{"firstName":"Nikau","lastName":"R.","country":"New Zealand","continent":"Oceania","age":39,"language":"JavaScript"},{"firstName":"Nor","lastName":"E.","country":"Malaysia","continent":"Asia","age":21,"language":"Python"},{"firstName":"Mark","lastName":"G.","country":"Scotland","continent":"Europe","age":22,"language":"Ruby"},{"firstName":"Maria","lastName":"I.","country":"Greece","continent":"Europe","age":32,"language":"Python"},{"firstName":"Fatima","lastName":"H.","country":"Pakistan","continent":"Asia","age":28,"language":"JavaScript"},{"firstName":"Emily","lastName":"A.","country":"Northern Ireland","continent":"Europe","age":32,"language":"Python"},{"firstName":"Margret","lastName":"M.","country":"Iceland","continent":"Europe","age":28,"language":"Ruby"},{"firstName":"Luka","lastName":"J.","country":"Slovenia","continent":"Europe","age":29,"language":"JavaScript"},{"firstName":"Lukas","lastName":"X.","country":"Croatia","continent":"Europe","age":35,"language":"Ruby"},{"firstName":"Kseniya","lastName":"T.","country":"Belarus","continent":"Europe","age":29,"language":"Ruby"},{"firstName":"Noel","lastName":"O.","country":"Albania","continent":"Europe","age":23,"language":"Python"},{"firstName":"Fatima","lastName":"A.","country":"Algeria","continent":"Africa","age":25,"language":"JavaScript"},{"firstName":"Laia","lastName":"P.","country":"Andorra","continent":"Europe","age":55,"language":"Ruby"}]
+
+function isLanguageDiverse(list) {
+let num_key = list.reduce( (acc, i) => ({ ...acc, [i.language]: (acc[i.language] || 0) + 1 }),[]);
+let result = Object.values(num_key).sort((a, b) => (a-b))
+return (result[result.length - 1] / result[0] > 2 || result.length < 3) ? false : true;
+}
+
+console.log(isLanguageDiverse(list1))*/
+
+
+
+/*напишите функцию, которая при выполнении as findOddNames(list1)возвращает только разработчиков, где , если вы добавите ASCII-
+представление всех символов в их именах, результатом будет нечетное число :*/
+
+/*var list1 = [
+  { firstName: 'Aba', lastName: 'N.', country: 'Ghana', continent: 'Africa', age: 21, language: 'Python' },
+  
+
+];
+
+function findOddNames(list) {
+let result = list.map(i => i.firstName.split("")).map( (x, i) => {
+return x.map(a => {
+  return a.charCodeAt()
+}) 
+}).map( (i) => {
+return i.reduce( (acc2, n) => {
+  return acc2 + n
+})
+}).map((a, i, arr) => {
+  if(arr[i] % 2 !=0) {return list[i]} })
+
+return result.filter(i => i != undefined)
+}
+
+console.log(findOddNames(list1))
+
+console.log('ABC'.charCodeAt(2))*/
