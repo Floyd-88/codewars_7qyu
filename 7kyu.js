@@ -576,3 +576,34 @@ return result.filter(i => i != undefined)
 console.log(findOddNames(list1))
 
 console.log('ABC'.charCodeAt(2))*/
+
+
+
+
+/*написать функцию, которая добавляет question свойство к каждому объекту во входном массиве, где разработчик не предоставил 
+соответствующие данные (помечены nullзначением в JavaScript, со значением по умолчанию в COBOL). Значением questionсвойства 
+должна быть следующая строка:
+Hi, could you please provide your <property name>. и возвращает только разработчиков с отсутствующими данными*/
+
+/*var list1 = [{"firstName":"Sofia","lastName":"P.","country":"Italy","continent":null,"age":41,"language":"Clojure"},
+{"firstName":"Kseniya","lastName":"T.","country":"Belarus","continent":"Europe","age":29,"language":"JavaScript"},
+{"firstName":"Jing","lastName":"X.","country":"China","continent":"Asia","age":39,"language":"Ruby"},
+{"firstName":"Noa","lastName":"A.","country":"Israel","continent":"Asia","age":null,"language":"Ruby"},
+{"firstName":"Andrei","lastName":"E.","country":"Romania","continent":"Europe","age":59,"language":"C"},
+{"firstName":"Maria","lastName":"S.","country":"Peru","continent":"Americas","age":60,"language":"C"},
+{"firstName":"Lukas","lastName":"X.","country":null,"continent":"Europe","age":75,"language":"Python"},
+{"firstName":"Chloe","lastName":"K.","country":"Guernsey","continent":"Europe","age":88,"language":"Ruby"},
+{"firstName":"Viktoria","lastName":"W.","country":"Bulgaria","continent":"Europe","age":98,"language":"PHP"},
+{"firstName":"Piotr","lastName":"B.","country":"Poland","continent":"Europe","age":128,"language":"JavaScript"}]
+
+
+function askForMissingDetails(list) {
+ 
+  return list.filter(str => {
+    for(key in str) {
+      if(str[key] === null) {return str.question = `Hi, could you please provide your ${key}.`} }
+    })
+
+}
+
+console.log(askForMissingDetails(list1))*/
